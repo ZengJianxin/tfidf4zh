@@ -4,8 +4,8 @@
 使用前需要提前准备好语料库corpus，语料库是string组成的list </br>
 导入模块 </br>
 import tfidf4zh </br>
-新建一个tfidf对象 </br>
-t = tfidf4zh.TFIDF(corpus) </br>
+新建一个tfidf对象，可添加自己建立的词典 </br>
+t = tfidf4zh.TFIDF(corpus, userdict=None) </br>
 然后对语料库进行分析 </br>
 t.analyze() </br>
 导入文章article提取关键字，关键字个数num默认为5 </br>
