@@ -35,7 +35,7 @@ class TFIDF:
             idf = math.log(len(self.cutted_corpus) / c)
             tfidf.append((key, tf * idf))
             tfidf.sort(key=lambda x: x[1], reverse=True)
-        return tfidf[:num]
+        return dict(tfidf[:num])
 
     def similar_articles(self, article, similarity):
         similar_articles = []
