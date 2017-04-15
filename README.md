@@ -1,5 +1,6 @@
 # tfidf4zh
 中文TF-IDF算法实现，具有提取关键字、摘要、找相似文章的功能,使用Python编写 </br>
+本模块依赖jieba分词工具，请提前安装 pip install jieba </br>
 使用前需要提前准备好语料库corpus，语料库是string组成的list </br>
 导入模块 </br>
 import tfidf4zh </br>
