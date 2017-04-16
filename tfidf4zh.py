@@ -54,7 +54,7 @@ class TFIDF:
 
     def summarize(self, article, puns = '。！？'):
         summary = []
-        keywords = self.keywords(article)
+        keywords = self.keywords(article).keys()
         start = 0
         sentences = []
         for i in range(len(article)):
