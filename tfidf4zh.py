@@ -35,7 +35,7 @@ class TFIDF:
             idf = math.log(len(self.cutted_corpus) / c)
             tfidf.append((key, tf * idf))
             tfidf.sort(key=lambda x: x[1], reverse=True)
-        return dict(tfidf[:num])
+        return [x[0] for x in tfidf[:num]]
 
     def similar_articles(self, article, similarity):
         similar_articles = []
@@ -52,9 +52,9 @@ class TFIDF:
                 similar_articles.append(self.corpus[i])
         return similar_articles
 
-    def summarize(self, article, puns = '。！？'):
+    def summarize(self, article, keywords_num=3, puns = '。！？'):
         summary = []
-        keywords = self.keywords(article).keys()
+        keywords = self.keywords(article, keywords_num)
         start = 0
         sentences = []
         for i in range(len(article)):
@@ -72,3 +72,5 @@ class TFIDF:
                     keywords.remove(keyword)
         return ''.join(summary)
         
+
+version = 0.01
