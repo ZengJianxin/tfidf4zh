@@ -73,4 +73,4 @@ class TFIDF:
         return ''.join(summary)
         
 
-version = 0.01
+__version__ = 0.01
